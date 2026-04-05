@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { withBasePath } from '@/lib/paths';
+import { BASE_PATH, withBasePath } from '@/lib/paths';
 
 const desktopTabs = [
   { href: '/', label: 'Home', key: 'home' },
@@ -101,18 +101,35 @@ function BottomNav({ currentTab }) {
 
 export default function AppShell({ title, children }) {
   const pathname = usePathname();
+  const normalizedPathname = (() => {
+    if (!pathname) {
+      return '/';
+    }
 
-  const currentTabByPath = {
-    '/': 'home',
-    '/travel': 'travel',
-    '/lunch': 'lunch',
-    '/book': 'book',
-    '/people': 'people',
-    '/afterwork': 'afterwork',
-    '/pass': 'pass',
-  };
+    // In some deployments (e.g. GitHub Pages project sites), the runtime path can include basePath.
+    const withoutBase =
+      BASE_PATH && pathname.startsWith(BASE_PATH)
+        ? pathname.slice(BASE_PATH.length) || '/'
+        : pathname;
 
-  const currentTab = currentTabByPath[pathname] ?? 'home';
+    const withoutTrailing =
+      withoutBase !== '/' && withoutBase.endsWith('/')
+        ? withoutBase.slice(0, -1)
+        : withoutBase;
+
+    return withoutTrailing || '/';
+  })();
+
+  const currentTab = (() => {
+    if (normalizedPathname === '/') return 'home';
+    if (normalizedPathname.startsWith('/travel')) return 'travel';
+    if (normalizedPathname.startsWith('/lunch')) return 'lunch';
+    if (normalizedPathname.startsWith('/book')) return 'book';
+    if (normalizedPathname.startsWith('/people')) return 'people';
+    if (normalizedPathname.startsWith('/afterwork')) return 'afterwork';
+    if (normalizedPathname.startsWith('/pass')) return 'pass';
+    return 'home';
+  })();
 
   return (
     <div className="min-h-screen pb-32">
