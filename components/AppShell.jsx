@@ -24,7 +24,7 @@ const mobileTabs = [
   { href: '/afterwork', label: 'After', icon: 'local_bar', key: 'afterwork' },
 ];
 
-const PRIMARY_AVATAR = withBasePath('/laura.jpeg');
+const PRIMARY_AVATAR = withBasePath('/Laura.jpeg');
 const FALLBACK_AVATAR = withBasePath('/laura-fallback.svg');
 
 function Header({ title, currentTab }) {
