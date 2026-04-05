@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
+  <rect width="160" height="160" rx="80" fill="#E8E8E8"/>
+  <circle cx="80" cy="62" r="30" fill="#C6C6C6"/>
+  <path d="M30 140C36 112 55 98 80 98C105 98 124 112 130 140" fill="#B1C5FF"/>
+  <text x="80" y="149" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#424654">LAURA</text>
+</svg>
