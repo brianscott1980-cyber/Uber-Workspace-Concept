@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { withBasePath } from '@/lib/paths';
 
 const desktopTabs = [
   { href: '/', label: 'Home', key: 'home' },
@@ -23,8 +24,8 @@ const mobileTabs = [
   { href: '/afterwork', label: 'After', icon: 'local_bar', key: 'afterwork' },
 ];
 
-const PRIMARY_AVATAR = '/laura.jpeg';
-const FALLBACK_AVATAR = '/laura-fallback.svg';
+const PRIMARY_AVATAR = withBasePath('/laura.jpeg');
+const FALLBACK_AVATAR = withBasePath('/laura-fallback.svg');
 
 function Header({ title, currentTab }) {
   const [avatarSrc, setAvatarSrc] = useState(PRIMARY_AVATAR);

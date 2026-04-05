@@ -3,6 +3,7 @@
 import { faker } from '@faker-js/faker';
 import { useMemo, useState } from 'react';
 import AppShell from '@/components/AppShell';
+import { withBasePath } from '@/lib/paths';
 
 const filterChips = [
   'Your Team',
@@ -23,8 +24,7 @@ const colleagues = [
     statusTone: 'text-secondary',
     statusDot: 'bg-green-500',
     statusIcon: 'location_on',
-    image:
-      '/Laura.jpeg',
+    image: withBasePath('/Laura.jpeg'),
     actions: ['forum', 'calendar_month'],
     featured: false,
   },
@@ -77,13 +77,13 @@ const statusOptions = [
 
 const sampleImages = colleagues.filter((c) => c.name !== 'Laura').map((c) => c.image);
 const edinburghHeaderImages = [
-  '/edinburgh-bg/1.jpeg',
-  '/edinburgh-bg/2.jpg',
-  '/edinburgh-bg/3.jpg',
-  '/edinburgh-bg/4.jpg',
-  '/edinburgh-bg/5.jpg',
-  '/edinburgh-bg/6.jpeg',
-  '/edinburgh-bg/7.jpg',
+  withBasePath('/edinburgh-bg/1.jpeg'),
+  withBasePath('/edinburgh-bg/2.jpg'),
+  withBasePath('/edinburgh-bg/3.jpg'),
+  withBasePath('/edinburgh-bg/4.jpg'),
+  withBasePath('/edinburgh-bg/5.jpg'),
+  withBasePath('/edinburgh-bg/6.jpeg'),
+  withBasePath('/edinburgh-bg/7.jpg'),
 ];
 
 export default function PeoplePage() {
