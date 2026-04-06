@@ -60,8 +60,8 @@ const workstationSeed = [
 
 const meetingRoomSeed = [
   {
-    id: 'mr-big-ben',
-    name: 'Big Ben',
+    id: 'mr-loch-lomond',
+    name: 'Loch Lomond',
     kind: 'Meeting Room',
     location: 'Floor 12 • West Wing',
     resources: ['Whiteboard', 'Video Conferencing', '65in Display'],
@@ -69,8 +69,8 @@ const meetingRoomSeed = [
     blurb: 'Best for leadership standups and hybrid syncs.',
   },
   {
-    id: 'mr-tower-bridge',
-    name: 'Tower Bridge',
+    id: 'mr-loch-awe',
+    name: 'Loch Awe',
     kind: 'Meeting Room',
     location: 'Floor 11 • Central Hub',
     resources: ['Whiteboard', 'Standing Table', 'Acoustic Panels'],
@@ -78,8 +78,8 @@ const meetingRoomSeed = [
     blurb: 'Balanced room for workshops and planning.',
   },
   {
-    id: 'mr-camden',
-    name: 'Camden Market',
+    id: 'mr-loch-ness',
+    name: 'Loch Ness',
     kind: 'Meeting Room',
     location: 'Floor 10 • South Wing',
     resources: ['Video Conferencing', '65in Display'],
@@ -87,8 +87,8 @@ const meetingRoomSeed = [
     blurb: 'Fast setup room for recurring ceremonies.',
   },
   {
-    id: 'mr-greenwich',
-    name: 'Greenwich',
+    id: 'mr-loch-fyne',
+    name: 'Loch Fyne',
     kind: 'Meeting Room',
     location: 'Floor 14 • East Wing',
     resources: ['Whiteboard', 'Projector', 'Conference Phone'],

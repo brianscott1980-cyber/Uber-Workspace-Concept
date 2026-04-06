@@ -3,7 +3,7 @@ import AppShell from '@/components/AppShell';
 
 export default function HomePage() {
   return (
-    <AppShell title="Uber London">
+    <AppShell title="Uber Edinburgh">
       <main className="mx-auto max-w-screen-xl px-6 pb-32 pt-24">
         <section className="mb-12">
           <h1 className="mb-4 font-headline text-5xl font-extrabold tracking-[-0.04em] text-on-surface md:text-6xl">
