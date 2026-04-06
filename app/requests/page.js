@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { trackEvent } from '@/lib/analytics';
 
 const initialRequests = [
   {
@@ -102,6 +103,11 @@ function RequestsPageContent() {
     setSubject(template.subject);
     setDetails(template.details);
     setStage('form');
+    trackEvent('request_category_selected', {
+      category: template.category,
+      sub_category: template.subCategory,
+      source_key: key,
+    });
   };
 
   useEffect(() => {
@@ -126,6 +132,11 @@ function RequestsPageContent() {
     const next = [nextRequest, ...inMemoryRequests];
     inMemoryRequests = next;
     setRequests(next);
+    trackEvent('request_raised', {
+      category: requestCategory,
+      sub_category: requestSubCategory,
+      subject: nextRequest.title,
+    });
     goToOverview();
   };
 

@@ -3,6 +3,7 @@
 import { faker } from '@faker-js/faker';
 import { useEffect, useMemo, useState } from 'react';
 import AppShell from '@/components/AppShell';
+import { trackEvent } from '@/lib/analytics';
 
 const STATUS_OPTIONS = ['Available', 'Out of Office', 'Busy', 'Do Not Disturb', 'Away'];
 
@@ -241,6 +242,10 @@ export default function BookPage() {
     setResults(shuffled);
     setSelectedItem(null);
     setView('results');
+    trackEvent('booking_search', {
+      booking_type: bookingType === 'meetingRoom' ? 'meeting_room' : 'workstation',
+      colleagues_selected: selectedColleagueIds.length,
+    });
   };
 
   const handleBookSelected = () => {
@@ -267,6 +272,12 @@ export default function BookPage() {
       const next = [booking, ...current];
       inMemoryBookings = next;
       return next;
+    });
+    trackEvent('workspace_booked', {
+      booking_kind: selectedItem.kind.toLowerCase().replace(/\s+/g, '_'),
+      booking_name: selectedItem.name,
+      colleagues_invited: selectedColleagues.length,
+      resources_count: selectedItem.resources.length,
     });
     setSelectedItem(null);
     setView('home');

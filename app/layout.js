@@ -1,4 +1,5 @@
 import './globals.css';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 export const metadata = {
   title: 'Uber Workspace Concept',
@@ -10,6 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-surface font-body text-on-surface antialiased selection:bg-secondary/20">
+        <GoogleAnalytics />
         {children}
       </body>
     </html>

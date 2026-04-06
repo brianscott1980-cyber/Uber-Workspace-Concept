@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import AppShell from '@/components/AppShell';
+import { trackEvent } from '@/lib/analytics';
 
 const rideOptions = [
   {
@@ -140,6 +141,15 @@ export default function TravelPage() {
     const nextRides = [newRide, ...memoryScheduledRides];
     memoryScheduledRides = nextRides;
     setScheduledRides(nextRides);
+    trackEvent('ride_booked', {
+      trip_type: tripType,
+      route_title: selectedRoute.title,
+      from_location: selectedRoute.from,
+      to_location: selectedRoute.to,
+      pickup_time: pickupTime,
+      ride_option: selectedRide.name,
+      price_label: isWorkTrip ? 'covered_by_work' : selectedRide.price,
+    });
     transitionStage('planner');
   };
 
