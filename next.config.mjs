@@ -8,6 +8,9 @@ const basePath = isGithubActions && !isUserOrOrgPages ? `/${repo}` : '';
 
 const nextConfig = {
   reactStrictMode: true,
+  devIndicators: {
+    position: 'top-right',
+  },
   output: 'export',
   images: {
     unoptimized: true,

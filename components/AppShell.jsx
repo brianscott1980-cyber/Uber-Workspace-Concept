@@ -57,9 +57,9 @@ function Header({ title, currentTab }) {
             </Link>
           ))}
         </nav>
-        <button className="material-symbols-outlined rounded-full p-2 text-on-surface duration-200 hover:bg-surface-container-high active:scale-95">
+        <Link href="/requests" className="material-symbols-outlined rounded-full p-2 text-on-surface duration-200 hover:bg-surface-container-high active:scale-95">
           notifications
-        </button>
+        </Link>
       </div>
     </header>
   );

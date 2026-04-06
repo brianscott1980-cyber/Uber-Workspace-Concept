@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import AppShell from '@/components/AppShell';
 
 const INITIAL_SECONDS = 14 * 3600 + 52 * 60 + 3;
@@ -75,21 +76,21 @@ export default function PassPage() {
         </div>
 
         <div className="mt-8 grid w-full grid-cols-2 gap-4">
-          <button type="button" className="flex flex-col items-start rounded-2xl bg-surface-container-low p-5 text-left transition-all hover:bg-surface-container-high active:scale-95">
+          <Link href="/requests?mode=form&category=it-support" className="flex flex-col items-start rounded-2xl bg-surface-container-low p-5 text-left transition-all hover:bg-surface-container-high active:scale-95">
             <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-surface-container-lowest">
               <span className="material-symbols-outlined text-on-surface">report</span>
             </div>
             <span className="font-headline text-sm font-bold text-on-surface">Report an Issue</span>
             <span className="mt-1 text-[11px] leading-tight text-outline">Instant security help</span>
-          </button>
+          </Link>
 
-          <button type="button" className="flex flex-col items-start rounded-2xl bg-surface-container-low p-5 text-left transition-all hover:bg-surface-container-high active:scale-95">
+          <Link href="/requests?mode=form&category=office-access" className="flex flex-col items-start rounded-2xl bg-surface-container-low p-5 text-left transition-all hover:bg-surface-container-high active:scale-95">
             <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-surface-container-lowest">
               <span className="material-symbols-outlined text-on-surface">person_add</span>
             </div>
             <span className="font-headline text-sm font-bold text-on-surface">Visitor Registration</span>
             <span className="mt-1 text-[11px] leading-tight text-outline">Pre-clear your guests</span>
-          </button>
+          </Link>
         </div>
 
         <div className="mt-8 flex w-full items-start gap-3 rounded-xl bg-surface-container-high/40 p-4">

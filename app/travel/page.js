@@ -423,7 +423,7 @@ export default function TravelPage() {
               >
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-16 items-center justify-center overflow-hidden rounded-lg bg-surface-container-high text-on-surface-variant">
-                    <span className="material-symbols-outlined">{route.icon}</span>
+                    <span className="material-symbols-outlined text-[22px] leading-none">{route.icon}</span>
                   </div>
                   <div>
                     <p className="font-bold text-on-surface">{route.title}</p>

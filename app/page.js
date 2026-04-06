@@ -136,10 +136,10 @@ export default function HomePage() {
                   <span className="material-symbols-outlined text-secondary">door_front</span>
                   <span className="text-xs font-bold">Entry Pass</span>
                 </Link>
-                <button type="button" className="flex flex-col items-start gap-2 rounded-xl bg-white p-4 transition-all hover:shadow-md active:scale-95">
+                <Link href="/requests?mode=form&category=it-support" className="flex flex-col items-start gap-2 rounded-xl bg-white p-4 transition-all hover:shadow-md active:scale-95">
                   <span className="material-symbols-outlined text-secondary">support_agent</span>
                   <span className="text-xs font-bold">IT Support</span>
-                </button>
+                </Link>
                 <Link href="/book" className="flex flex-col items-start gap-2 rounded-xl bg-white p-4 transition-all hover:shadow-md active:scale-95">
                   <span className="material-symbols-outlined text-secondary">meeting_room</span>
                   <span className="text-xs font-bold">Book Room</span>
